@@ -1,0 +1,404 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+  line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+  background-color: #222;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 2px solid #ff6600;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #f0f0f0;
+}
+
+.header-logo {
+  height: 40px;
+  margin-right: 1rem;
+}
+
+.header-brand h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ff6600;
+}
+
+.header-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.header-links a {
+  color: #f0f0f0;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.header-links a:hover {
+  color: #ff6600;
+}
+
+#toggle-layout {
+  background: none;
+  border: 1px solid #444;
+  border-radius: 4px;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s;
+  color: #f0f0f0;
+}
+
+#toggle-layout:hover {
+  background-color: #333;
+  border-color: #ff6600;
+}
+
+/* Search Container Styles */
+.search-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+#product-search {
+  padding: 0.5rem 1rem;
+  border: 1px solid #444;
+  border-radius: 4px 0 0 4px;
+  width: 200px;
+  font-size: 0.9rem;
+  transition: border-color 0.2s;
+  background-color: #333;
+  color: #f0f0f0;
+}
+
+#product-search:focus {
+  outline: none;
+  border-color: #ff6600;
+}
+
+#search-button {
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#search-button:hover {
+  background-color: #e55c00;
+}
+
+/* Main Container Styles */
+.main-container {
+  max-width: 1400px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Layout Variations */
+.layout-horizontal {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.layout-vertical {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 2rem;
+}
+
+/* Filter Styles */
+.filters {
+  background-color: #222;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+  border: 1px solid #333;
+}
+
+.filters-horizontal {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.filters-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  height: fit-content;
+  position: sticky;
+  top: 90px;
+}
+
+.filter-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filter-item label {
+  font-weight: 500;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.filter-item select {
+  padding: 0.6rem;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background-color: #333;
+  color: #f0f0f0;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.filter-item select:focus {
+  outline: none;
+  border-color: #ff6600;
+}
+
+/* Product Grid Styles */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+.product {
+  background-color: #222;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #f0f0f0;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: visible; /* Alterado de hidden para visible */
+  height: 220px;
+  border: 1px solid #333;
+}
+.product:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(255, 102, 0, 0.2);
+  border-color: #ff6600;
+}
+.product img {
+  max-width: 100%;
+  max-height: 150px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+.benefit-text {
+  background-color: #ff6600;
+  color: white;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: none;
+  z-index: 5;
+}
+.price-text {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: #ff6600;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  cursor: help;
+  z-index: 5;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  line-height: 1; /* Corrige o alinhamento vertical do ícone */
+}
+/* Footer Styles */
+.spacer {
+  height: 2rem;
+}
+
+footer {
+  background-color: #222;
+  color: #ccc;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  border-top: 2px solid #ff6600;
+}
+
+footer a {
+  color: #ff6600;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .header-brand {
+    margin-bottom: 1rem;
+  }
+  
+  .header-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .layout-vertical {
+    grid-template-columns: 1fr;
+  }
+  
+  .filters-vertical {
+    position: static;
+  }
+  
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+  
+  .search-container {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  
+  #product-search {
+    width: 100%;
+  }
+}
+
+/* Animations and Transitions */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.product {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Tooltip Enhancement */
+[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  white-space: pre-wrap; /* Alterado para permitir quebra de linha */
+  max-width: 300px; /* Largura máxima para o tooltip */
+  z-index: 10;
+  pointer-events: none;
+  animation: fadeIn 0.2s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  border: 1px solid #ff6600;
+  margin-bottom: 5px; /* Adiciona espaço entre o tooltip e o elemento */
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #333;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff6600;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e55c00;
+}
+
+/* Adicionando estilos para melhorar a visualização do preço */
+.product .price-text:hover {
+  transform: scale(1.1);
+}
+
+/* Removendo a regra específica e aplicando a borda laranja para todos os produtos */
+.product {
+  background-color: #222;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #f0f0f0;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: visible;
+  height: 220px;
+  border: 1px solid #333;
+  /* Removida a borda laranja geral */
+}
+
+/* Adicionando borda laranja apenas para produtos com preço */
+.product[data-preco]:not([data-preco=""]) {
+  border-left: 3px solid #ff6600;
+}
+
+/* Melhorando a visualização dos filtros */
+.filter-item select option {
+  background-color: #333;
+  color: #f0f0f0;
+}
+
+/* Adicionando efeito de foco nos produtos */
+.product:focus {
+  outline: 2px solid #ff6600;
+}
